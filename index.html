@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paint</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        canvas {
+            display: block;
+            margin: 15px auto;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas></canvas>
+        <input type="text" class="brush-color">
+        <input type="text" class="brush-thickness">
+        <button>save image</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
