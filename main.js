@@ -23,7 +23,6 @@ class Brush {
 
         const inputThickness = document.querySelector(".brush-thickness");
         const inputColor = document.querySelector(".brush-color");
-
         inputThickness.value = this.thickness;
         inputColor.value = this.color;
 
@@ -53,26 +52,24 @@ class Brush {
 
 const brush = new Brush();
 
-function update() {
-    draw();
-}
-
 let lastX;
 let lastY;
 
-function draw() {
-    if(brush.paint) {
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(brush.x, brush.y);
-        ctx.lineWidth = brush.thickness;
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = brush.color;
-        ctx.stroke();
-    }
+function update() {
+    if(brush.paint) draw();
     lastX = brush.x;
     lastY = brush.y;
+}
+
+function draw() {
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(brush.x, brush.y);
+    ctx.lineWidth = brush.thickness;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = brush.color;
+    ctx.stroke();
 }
 
 function render() {
